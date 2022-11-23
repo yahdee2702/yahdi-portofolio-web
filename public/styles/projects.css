@@ -1,28 +1,65 @@
 @import url(common.css);
 
-.project-container {
+.creation-container {
+	display: grid;
+	gap: 1.1em;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.creation-container > .project-item {
 	display: flex;
-	width: 100%;
-	height: 20rem;
+	flex-direction: column;
 
-	padding: 1rem 0.7rem;
-	background-color: rgb(13, 32, 80);
+	background-color: rgb(16, 33, 75);
+
+	width: 100%;
+
+	border-radius: .7rem;
+	overflow: hidden;
+
+	/* box-shadow: 0 0 5px 0 rgba(255, 255, 255, .5); */
+
+	transition: box-shadow 250ms ease-out , transform 300ms ease-out;
 }
 
-.project-container > img {
+.creation-container > .project-item:hover {
+	transform: translate3d(0px, -.5em, 0px);
+
+	box-shadow: 0 0 25px 0 #cadcff60;
+}
+
+.creation-container > .project-item > img {
+	width: 100%;
 	height: 100%;
+	aspect-ratio: 1 / 1;
+
+	object-fit: cover;
+	object-position: center;
 }
 
-.project-container > .project-detail {
-	width: 100%;
+.creation-container > .project-item > img::before {
+	content: "";
 }
 
-.project-container > .project-detail > h3 {
-	text-align: left;
-	margin: 0 0;
+.creation-container > .project-item > h4 {
+	font-size: clamp(1rem, 9vw, 1.25rem);;
+	text-align: center;
+	margin: 0.7em 0;
 }
 
-.project-container > .project-detail > h3 > a {
-	text-decoration: none;
+.creation-container > .project-item > h4 > a {
 	color: white !important;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+	.creation-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 450px) {
+  .creation-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

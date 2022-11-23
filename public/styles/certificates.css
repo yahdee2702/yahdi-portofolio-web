@@ -1,24 +1,12 @@
 @import url(common.css);
 
-div#certificates-list {
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
-
-  width: 100%;
-}
-
-.certificate-container {
+.creation-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
   gap: 1.1em;
-  
-  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.certificate-container > figure {
+.creation-container > figure {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -28,7 +16,7 @@ div#certificates-list {
   margin: 0;
 }
 
-.certificate-container > figure > figcaption {
+.creation-container > figure > figcaption {
   position: absolute;
   width: 100%;
 
@@ -45,24 +33,24 @@ div#certificates-list {
   transition: opacity 300ms ease-out;
 }
 
-.certificate-container > figure:hover > figcaption {
+.creation-container > figure:hover > figcaption {
   opacity: 1;
 }
 
-.certificate-container > figure > img {
+.creation-container > figure > img {
   width: 100%;
   height: 100%;
 }
 
 
 @media screen and (max-width: 765px) {
-  .certificate-container {
+  .creation-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media screen and (max-width: 335px) {
-  .certificate-container {
+  .creation-container {
     grid-template-columns: repeat(1, 1fr);
   }
 

@@ -29,7 +29,6 @@ async function init() {
 	await server.start();
 
 	console.log(`Starting server in ${server.info.uri}`);
-	console.log(server.info);
 }
 
 init();
