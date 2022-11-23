@@ -1,0 +1,26 @@
+{
+	"name": "yahdi-portofolio-web",
+	"version": "1.0.0",
+	"main": "index.js",
+	"bin": {
+		"yahdi-portofolio-web": "bin/routes.js"
+	},
+	"scripts": {
+		"start": "nodemon index.js",
+		"production": "npx corss-env ENV=5000 node index.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"nodemon": "^2.0.20"
+	},
+	"dependencies": {
+		"@hapi/hapi": "^21.0.0",
+		"@hapi/inert": "^7.0.0",
+		"@hapi/vision": "^7.0.0",
+		"dotenv": "^16.0.3",
+		"handlebars": "^4.7.7",
+		"path": "^0.12.7"
+	}
+}

@@ -1,0 +1,248 @@
+@import url(parallax.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --background: #071538;
+  --text-button-color: #1A2D5D;
+}
+
+*  {
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  z-index: 1;
+
+  margin: 0;
+  padding: 0;
+
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+#explore-button {
+  cursor: pointer;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  min-width: 0;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  z-index: 10;
+
+  padding: 1.25rem 3rem;
+
+  transition: background-color 300ms linear, top 325ms ease-out;
+}
+
+nav.background-nav {
+  background-color: var(--background);
+}
+
+nav.hidden-nav {
+  top: -7rem;
+}
+
+nav > #hamburger-menu {
+  display: none;
+  cursor: pointer;
+
+  font-size: 2em;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+nav > #nav-buttons {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+
+  gap: 1.25em;
+}
+
+nav > a#home-nav {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: white;
+}
+
+nav > #nav-buttons > a {
+  font-size: 1.05em;
+  font-weight: 500;
+  color: white !important;
+  text-decoration: none;
+
+  padding: .8em 1.5em;
+  border-radius: 2em;
+  
+  transition: background-color 300ms ease-in, color 300ms ease-in, filter 300ms ease-in;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+nav > #nav-buttons > a:hover {
+  background-color: rgba(255, 255, 255);
+  filter: brightness(0.75);
+  color: var(--text-button-color) !important;
+}
+
+nav > #nav-buttons > a.selected-nav {
+  background-color: white;
+  color: var(--text-button-color) !important;
+}
+
+.buttons {
+  background-color: white;
+
+  padding: .5em 1.25em;
+
+  color: var(--text-button-color) !important;
+  text-decoration: none;
+
+  border-radius: 2em;
+
+  font-weight: 500;
+
+  transition: filter 300ms ease-in;;
+}
+
+.buttons:hover {
+  filter: brightness(0.75);
+}
+
+section {
+  overflow: hidden;
+  padding: 1rem 7rem 6rem;
+}
+
+section p {
+  font-size: 1.05rem;
+}
+
+section h2 {
+  font-size: clamp(2rem, 10vw,3rem);
+  text-align: center;
+}
+
+section h3 {
+  font-size: clamp(1.35rem, 9vw, 2rem);
+  text-align: center;
+}
+
+section > img {
+  width: 90%;
+  max-width: 16rem;
+  min-width: 6rem;
+  border-radius: 1em;
+  margin: 1.25rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+footer {
+  background-color: #1A2D5D;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer > p {
+  font-size: 1.15rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 930px) {
+  section {
+    padding: 1rem 3rem 6rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  nav > #nav-buttons {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 0;
+
+    min-width: none;
+    width: 100%;
+
+    top: 100%;
+    left: -100%;
+
+    transition: left 300ms ease-out;
+  }
+
+  nav > #hamburger-menu {
+    display: block;
+  }
+
+  nav > #hamburger-menu.active + #nav-buttons {
+    background-color: transparent;
+    left: 0;
+  }
+
+  nav > #hamburger-menu + #nav-buttons > a {
+    color: white !important;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    border-radius: 0;
+  }
+
+  nav > #hamburger-menu + #nav-buttons > a.selected-nav {
+    background-color: transparent;
+  }
+
+  nav > #hamburger-menu.active + #nav-buttons > a:hover {
+    background-color: transparent;
+  }
+
+  nav.background-nav > #hamburger-menu.active + #nav-buttons > a {
+    background-color: var(--background);
+  }
+
+  nav.hidden-nav:has(> #hamburger-menu.active) {
+    top: -20rem;
+  }
+
+  nav:not(.background-nav) > #hamburger-menu.active + #nav-buttons > a.selected-nav::before {
+    content: "| ";
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  nav {
+    padding: .75rem 2rem;
+  }
+
+  nav > #hamburger-menu + #nav-buttons > a {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 1rem 1rem 6rem;
+  }
+}

@@ -1,0 +1,85 @@
+#parallax {
+  position: relative;
+  height: 100vh;
+
+  overflow: hidden;
+  background-color: #071538;
+}
+
+#parallax > #parallax-background {
+  height: 100%;
+
+  background-color: #171F34;
+}
+
+#parallax > #parallax-background > div {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-position: center;
+  pointer-events: none;
+}
+
+#parallax > #parallax-background > div#foreground  {
+  background-image: url(../svg/foreground.svg);
+  z-index: 3;
+  height: 1000px;
+}
+
+#parallax > #parallax-background > div#mountain-3  {
+  background-image: url(../svg/mountain-3.svg);
+  z-index: 2;
+  height: 262px;
+}
+
+#parallax > #parallax-background > div#mountain-2  {
+  background-image: url(../svg/mountain-2.svg);
+  z-index: 1;
+  height: 241px;
+}
+
+#parallax > #parallax-background > div#mountain-1  {
+  background-image: url(../svg/mountain-1.svg);
+  z-index: 0;
+  height: 853px;
+}
+
+#parallax > #parallax-background > div#moon {
+  background-image: url(../svg/moon.svg);
+  width: 8rem;
+  height: 8rem;
+
+  object-position: center;
+  object-fit: fill;
+
+  bottom: calc(30rem + 5vh);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  box-shadow: 0 0 45px 0 #cadcff60;
+  border-radius: 50%;
+}
+
+#parallax > #parallax-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+}
+
+#parallax > #parallax-content > h1 {
+  font-size: clamp(2.45rem, 15vw, 4rem);
+
+  margin: .2em 0;
+}
+
+#parallax > #parallax-content > a.buttons {
+  font-size: 1.2rem;
+}

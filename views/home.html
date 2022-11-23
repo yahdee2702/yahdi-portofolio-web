@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portofolio - Home</title>
+		<link href="{{{assetsPath}}}/styles/main.css" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>
+			<div id="parallax">
+				<div id="parallax-background">
+					<div id="moon"></div>
+					<div id="mountain-1"></div>
+					<div id="mountain-2"></div>
+					<div id="mountain-3"></div>
+					<div id="foreground"></div>
+				</div>
+
+				<div id="parallax-content">
+					<h1>Portofolio</h1>
+					<a class="buttons" id="explore-button" destination="#about-me"
+						>Explore</a
+					>
+				</div>
+			</div>
+
+			<nav>
+				<a id="home-nav" href="/">Portofolio</a>
+				<i class="material-icons" id="hamburger-menu">menu</i>
+				<div id="nav-buttons">
+					<a id="about-nav" class="selected-nav" href="/">Home</a>
+					<a id="projects-nav" href="projects">Projects</a>
+					<a id="certificate-nav" href="certificates">Certificates</a>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<section id="about-me">
+				<h2>About Me</h2>
+				<img
+					src="{{{assetsPath}}}/images/yahdi-photo.png"
+					alt="This is me!"
+					id="pfp"
+				/>
+				<p>
+					Greetings! My name is Muhammad Yahdi Ilham Fahmi. I was born in
+					Kolaka, 24 February 2007. Currently, I'm studying in IDN Boarding
+					School Solo. <br /><br />
+					As a young man with a big dream, I started entering the world of
+					programming at September, 2020, while sitting as a Junior Highschool
+					Student in MTsN 1 Kolaka. Even with the 2020 pandemic, I was still
+					able to learn about programming just by watching Youtube tutorials.
+					And, what you're seeing here is the result of my 2 years tries and
+					failures.
+				</p>
+			</section>
+		</main>
+
+		<footer>
+			<p>Made by <b>Yahdi Ilham Fahmi</b></p>
+		</footer>
+
+		<script src="{{{assetsPath}}}/scripts/parallax.js"></script>
+		<script src="{{{assetsPath}}}/scripts/common.js"></script>
+	</body>
+</html>
