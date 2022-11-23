@@ -6,7 +6,7 @@
 		"yahdi-portofolio-web": "bin/routes.js"
 	},
 	"scripts": {
-		"start": "nodemon index.js",
+		"start": "node index.js",
 		"production": "npx corss-env ENV=5000 node index.js"
 	},
 	"author": "",
