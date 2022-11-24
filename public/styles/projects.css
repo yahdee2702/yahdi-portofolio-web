@@ -23,7 +23,7 @@
 }
 
 .creation-container > .project-item:hover {
-	transform: translate3d(0px, -.5em, 0px);
+	transform: scale(1.025);
 
 	box-shadow: 0 0 25px 0 #cadcff60;
 }
@@ -37,14 +37,29 @@
 	object-position: center;
 }
 
-.creation-container > .project-item > img::before {
-	content: "";
-}
-
 .creation-container > .project-item > h4 {
+	position: relative;
+	width: fit-content;
 	font-size: clamp(1rem, 9vw, 1.25rem);;
 	text-align: center;
-	margin: 0.7em 0;
+	margin: 0.7em auto;
+}
+
+.creation-container > .project-item > h4::before {
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: .1em;
+	pointer-events: none;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: white;
+	transition: width 250ms ease-out;
+}
+
+.creation-container > .project-item:hover > h4::before {
+	width: 80%;
 }
 
 .creation-container > .project-item > h4 > a {
