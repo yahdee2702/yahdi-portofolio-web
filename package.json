@@ -15,6 +15,9 @@
 	"devDependencies": {
 		"nodemon": "^2.0.20"
 	},
+	"engines": {
+		"node": "14.x"
+	},
 	"dependencies": {
 		"@hapi/hapi": "^21.0.0",
 		"@hapi/inert": "^7.0.0",
