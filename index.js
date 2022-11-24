@@ -17,7 +17,6 @@ async function init() {
 		engines: {
 			html: require("handlebars"),
 		},
-		relativeTo: __dirname,
 		path: "views",
 		context: {
 			assetsPath: `${process.env.URL ?? server.info.uri}/api/assets`,
